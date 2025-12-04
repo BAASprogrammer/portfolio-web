@@ -1,13 +1,13 @@
 import './App.css'
 import './index.css'
-import { Header } from './components/Header'
+import { Header } from './components/Resumen'
 
 function App() {
 
   return (
-    <>
+    <div>
       <Header title="Mi Portafolio Web" />
-    </>
+    </div>
   )
 }
 
