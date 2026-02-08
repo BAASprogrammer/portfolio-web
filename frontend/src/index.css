@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+/* Fonts */
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/Inter-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/Inter-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/Inter-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/Inter-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  .text-default {
+    color: oklch(0.7 0.02 340);
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold rounded-xl;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .btn-primary {
+    @apply bg-fuchsia-600 text-white;
+  }
+
+  .btn-primary:hover {
+    @apply bg-fuchsia-700;
+  }
+
+  .btn-social {
+    @apply rounded-full bg-black p-2 border-2 border-transparent text-white w-10 h-10 flex items-center justify-center transition-transform duration-300 ;
+  }
+
+  .btn-social:hover {
+    @apply bg-fuchsia-800 border-fuchsia-400 scale-110 cursor-pointer;
+
+  }
+
+  label {
+    @apply mb-2 p-2.5 font-medium text-gray-700;
+  }
+
+  input,
+  textarea {
+    @apply p-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fuchsia-500;
+  }
+
+  .btn-glow-hover:hover {
+    box-shadow: 0 0 10px 2px rgba(255, 72, 153, 0.7);
+  }
+  /* Introduction */
+  .text-menu{
+    @apply font-bold flex justify-start gap-4 p-4 items-center transition-colors duration-500 ease-in;
+  }
+
+  .line-menu{
+    @apply block h-[2px] w-8 transition-all duration-500 ease-out;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .text-menu:hover .line-menu, .active-section .line-menu{
+    @apply w-16;
+    background-image: linear-gradient(
+      90deg,
+      #ec4899,
+      #8b5cf6,
+      #eb0ee0,
+      #22c55e
+    );
+    background-size: 200% 200%;
+    color: transparent;
+    animation: gradient-move 8s ease-in-out infinite;
+  }
+
+  .text-menu:hover .menu-text, .active-section .menu-text{
+    background-image: linear-gradient(
+      90deg,
+      #ec4899,
+      #8b5cf6,
+      #eb0ee0,
+      #22c55e
+    );
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-move 8s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .text-gradient-animate {
+    background-image: linear-gradient(
+      90deg,
+      #ec4899,
+      #8b5cf6,
+      #eb0ee0,
+      #22c55e
+    );
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-move 8s ease-in-out infinite;
+  }
+}
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

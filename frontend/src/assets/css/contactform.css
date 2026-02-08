@@ -1,0 +1,7 @@
+@reference "../../index.css";
+
+@layer components {
+  label {
+    /* @apply block mb-2 p-2.5 font-medium text-gray-700; */
+  }
+}
