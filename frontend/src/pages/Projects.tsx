@@ -37,7 +37,7 @@ export const Projects = ({id} : SectionProps) => {
                                         </div>
                                         <h4 className="text-blue-300 font-semibold mb-1">Tienda de Guitarras</h4>
                                         <img src={GuitarStorePreview} alt="Tienda de Guitarras" />
-                                        <p className="text-xs text-gray-500 mt-1">React + Tailwind CSS</p>
+                                        <p className="text-xs text-gray-500 mt-1">React + JS</p>
                                     </div>
                                 </div>
                                 {/* Overlay sutil */}
@@ -51,7 +51,6 @@ export const Projects = ({id} : SectionProps) => {
                         </div>
                         <div className="flex flex-wrap gap-2 mb-4">
                             <span className="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded">React</span>
-                            <span className="text-xs bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded">Tailwind CSS</span>
                             <span className="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded">JavaScript</span>
                             <span className="text-xs bg-gray-500/20 text-gray-300 px-2 py-1 rounded">Vercel</span>
                         </div>
