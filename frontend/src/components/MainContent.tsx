@@ -1,9 +1,9 @@
-import { ContactForm } from './sections/ContactForm';
-import { About } from './sections/About';
-import { Experience } from "./sections/Experience";
-import { Projects } from "./sections/Projects";
-import { Skills } from './sections/Skills';
-import { PersonalIntro } from './sections/PersonalIntro';
+import { ContactForm } from '../pages/ContactForm';
+import { About } from '../pages/About';
+import { Experience } from "../pages/Experience";
+import { Projects } from "../pages/Projects";
+import { Skills } from '../pages/Skills';
+import { PersonalIntro } from '../pages/PersonalIntro';
 
 export const MainContent = () => {  return (
     <div className="text-default p-6 lg:p-20">

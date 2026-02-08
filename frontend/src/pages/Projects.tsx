@@ -1,4 +1,5 @@
-import type { SectionProps } from "../../types/SectionProps"
+import type { SectionProps } from "../types/SectionProps"
+import GuitarStorePreview from "../assets/images/previews/guitar-store-1.png";
 
 export const Projects = ({id} : SectionProps) => {
     return (
@@ -26,7 +27,7 @@ export const Projects = ({id} : SectionProps) => {
                                 Incluye catálogo de productos, carrito de compras funcional y navegación intuitiva.
                             </p>
                         <div className="mb-6">
-                            <div className="relative w-full h-48 bg-gradient-to-br from-blue-900/20 to-purple-900/20 border border-blue-500/30 rounded-lg overflow-hidden group">
+                            <div className="relative w-full h-110 bg-gradient-to-br from-blue-900/20 to-purple-900/20 border border-blue-500/30 rounded-lg overflow-hidden group">
                                 <div className="absolute inset-0 flex items-center justify-center">
                                     <div className="text-center p-4">
                                         <div className="w-16 h-16 mx-auto mb-3 bg-blue-500/20 rounded-full flex items-center justify-center group-hover:bg-blue-500/30 transition-colors">
@@ -35,7 +36,7 @@ export const Projects = ({id} : SectionProps) => {
                                             </svg>
                                         </div>
                                         <h4 className="text-blue-300 font-semibold mb-1">Tienda de Guitarras</h4>
-                                        <p className="text-xs text-gray-400">Captura de pantalla próximamente</p>
+                                        <img src={GuitarStorePreview} alt="Tienda de Guitarras" />
                                         <p className="text-xs text-gray-500 mt-1">React + Tailwind CSS</p>
                                     </div>
                                 </div>
@@ -55,10 +56,10 @@ export const Projects = ({id} : SectionProps) => {
                             <span className="text-xs bg-gray-500/20 text-gray-300 px-2 py-1 rounded">Vercel</span>
                         </div>
                         <div className="flex gap-4">
-                            <a href="#" className="text-blue-400 hover:text-blue-300 transition-colors duration-300 text-sm font-medium">
+                            <a href="https://guitar-store-react-js.vercel.app/" target="_blank" className="text-blue-400 hover:text-blue-300 transition-colors duration-300 text-sm font-medium">
                                 Ver Demo →
                             </a>
-                            <a href="https://github.com/tu-usuario/tienda-guitarras-react" target="_blank" className="text-gray-400 hover:text-gray-300 transition-colors duration-300 text-sm font-medium">
+                            <a href="https://github.com/BAASprogrammer/GuitarStore-React-JS" target="_blank" className="text-gray-400 hover:text-gray-300 transition-colors duration-300 text-sm font-medium">
                                 Código →
                             </a>
                         </div>

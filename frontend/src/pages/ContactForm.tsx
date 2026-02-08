@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react';
-import '../../assets/css/contactform.css';
-import type { SectionProps } from '../../types/SectionProps';
+import '../assets/css/contactform.css';
+import type { SectionProps } from '../types/SectionProps';
 
 export const ContactForm = ({id} : SectionProps) => {
   const [errors, setErrors] = useState<{[key:string]:string}>({});

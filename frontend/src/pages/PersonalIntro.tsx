@@ -1,5 +1,5 @@
-import drownarrow from '../../assets/images/down-arrow-icon6.png';
-import pdfCV from '../../assets/images/PDF-file.png';
+import drownarrow from '../assets/images/down-arrow-icon6.png';
+import pdfCV from '../assets/images/PDF-file.png';
 
 export const PersonalIntro = () => {
     const scrollToProjects = () => {
