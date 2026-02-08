@@ -1,4 +1,4 @@
-import type { SectionProps } from "../../types/SectionProps"
+import type { SectionProps } from "../types/SectionProps"
 
 export const Experience = ({id} : SectionProps) => {
     return (
