@@ -2,8 +2,10 @@
   "name": "portafolio-web",
   "private": true,
   "version": "0.0.0",
+  "author": "BAASprogrammer",
   "type": "module",
   "scripts": {
+    "start": "vite",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
