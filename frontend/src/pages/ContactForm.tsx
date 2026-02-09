@@ -34,8 +34,6 @@ export const ContactForm = ({id} : SectionProps) => {
           }),
         });
 
-        const data = await response.json();
-
         if (response.ok) {
           setResponse('Correo enviado exitosamente. Pronto me pondré en contacto contigo.');
           event.currentTarget.reset();
