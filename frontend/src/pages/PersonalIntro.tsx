@@ -12,8 +12,8 @@ export const PersonalIntro = () => {
     }
       
     return (
-        <div className='p-4 lg:p-0'>
-            <h5 className="text-pink-400 font-bold">Hola, mi nombre es</h5>
+        <div className='p-4'>
+            <h5 className="text-pink-400 font-bold mt-4">Hola, mi nombre es</h5>
             <h1 className="text-6xl font-bold pt-6 text-gradient-animate">Bárbara Arias</h1>
             <h2 className="text-4xl text-white py-6 font-semibold">Genero programas para la web.</h2>
             <p className='mt-2 mb-4 text-white'>
@@ -23,12 +23,12 @@ export const PersonalIntro = () => {
             <div className="mt-6">
                 <button
                 type='button'
-                className="btn btn-primary btn-glow-hover mr-2.5 cursor-pointer" 
+                className="btn btn-primary btn-glow-hover mr-2.5 cursor-pointer transform transition-transform duration-300 ease-in-out hover:-translate-y-1" 
                 onClick={scrollToProjects} title="Ver Proyectos">
                 Ver proyectos
                 <img className='size-5 ml-2' src={drownarrow} alt="Ver Proyectos" />
                 </button>
-                <button type='button' className="btn btn-primary btn-glow-hover cursor-pointer" title='Descargar CV' onClick={DownloadCV}>Descargar CV<img className='size-5 ml-2' src={pdfCV} alt="Descargar CV" /></button>
+                <button type='button' className="btn btn-primary btn-glow-hover cursor-pointer transform transition-transform duration-300 ease-in-out hover:-translate-y-1" title='Descargar CV' onClick={DownloadCV}>Descargar CV<img className='size-5 ml-2' src={pdfCV} alt="Descargar CV" /></button>
             </div>
         </div>
     )

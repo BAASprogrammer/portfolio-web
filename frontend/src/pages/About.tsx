@@ -16,7 +16,7 @@ export const About = ({id} : SectionProps) => {
                 </div>
 
                 <div className='flex items-center mt-6 gap-8 flex-col lg:flex-row'>
-                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl shadow-xl max-w-lg w-10/12 lg:w-full h-40 hover:shadow-2xl transition-all duration-300 hover:border-blue-400/50">
+                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl shadow-xl max-w-lg w-10/12 lg:w-full h-40 hover:shadow-2xl transition-all duration-300 hover:border-blue-400/50 hover:-translate-y-1">
                         <div className="flex items-center justify-center mb-3">
                             <span className='text-2xl font-bold text-blue-400 hover:text-blue-300 transition-colors duration-300'>Frontend</span>
                         </div>
@@ -25,7 +25,7 @@ export const About = ({id} : SectionProps) => {
                         </p>
                     </div>
 
-                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl shadow-xl max-w-lg w-10/12  lg:w-full h-40 hover:shadow-2xl transition-all duration-300 hover:border-green-400/50">
+                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl shadow-xl max-w-lg w-10/12  lg:w-full h-40 hover:shadow-2xl transition-all duration-300 hover:border-green-400/50 hover:-translate-y-1">
                         <div className="flex items-center justify-center mb-3">
                             <span className='text-2xl font-bold text-green-400 hover:text-green-300 transition-colors duration-300'>Backend</span>
                         </div>

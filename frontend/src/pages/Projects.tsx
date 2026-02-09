@@ -27,15 +27,9 @@ export const Projects = ({id} : SectionProps) => {
                                 Incluye catálogo de productos, carrito de compras funcional y navegación intuitiva.
                             </p>
                         <div className="mb-6">
-                            <div className="relative w-full h-110 bg-gradient-to-br from-blue-900/20 to-purple-900/20 border border-blue-500/30 rounded-lg overflow-hidden group">
+                            <div className="relative w-full h-80 bg-gradient-to-br from-blue-900/20 to-purple-900/20 border border-blue-500/30 rounded-lg overflow-hidden group">
                                 <div className="absolute inset-0 flex items-center justify-center">
                                     <div className="text-center p-4">
-                                        <div className="w-16 h-16 mx-auto mb-3 bg-blue-500/20 rounded-full flex items-center justify-center group-hover:bg-blue-500/30 transition-colors">
-                                            <svg className="w-8 h-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                            </svg>
-                                        </div>
-                                        <h4 className="text-blue-300 font-semibold mb-1">Tienda de Guitarras</h4>
                                         <img src={GuitarStorePreview} alt="Tienda de Guitarras" />
                                         <p className="text-xs text-gray-500 mt-1">React + JS</p>
                                     </div>
