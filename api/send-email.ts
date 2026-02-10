@@ -45,7 +45,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
       body: JSON.stringify({
         name: name,
         email: email,
-        subject: subject,
+        _subject: subject,
         message: message,
       }),
     });
