@@ -40,7 +40,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     console.log('📧 Intentando enviar email desde:', email);
 
     const result = await resend.emails.send({
-      from: 'noreply@resend.dev', // Cambiar a tu dominio verificado en Resend
+      from: 'onboarding@resend.dev', // Email de prueba de Resend (cambiar a tu dominio verificado)
       to: 'barbara.arias.salvo@gmail.com',
       replyTo: email,
       subject: `Nuevo mensaje de ${name}: ${subject}`,

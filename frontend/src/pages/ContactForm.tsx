@@ -34,16 +34,21 @@ export const ContactForm = ({id} : SectionProps) => {
           }),
         });
 
+        const data = await response.json();
+
         if (response.ok) {
           setResponse('Correo enviado exitosamente. Pronto me pondré en contacto contigo.');
           event.currentTarget.reset();
           setErrors({});
           setTimeout(() => setResponse(''), 5000);
         } else {
-          setResponse('Error al enviar el correo. Intenta de nuevo.');
+          // Mostrar error específico si está disponible
+          const errorMessage = data.details || data.error || 'Error al enviar el correo. Intenta de nuevo.';
+          setResponse(`Error: ${errorMessage}`);
+          console.error('Error del servidor:', data);
         }
       } catch (error) {
-        console.error('Error:', error);
+        console.error('Error de conexión:', error);
         setResponse('Error al conectar. Intenta de nuevo.');
       }
     }
