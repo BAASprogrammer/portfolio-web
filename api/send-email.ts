@@ -1,12 +1,9 @@
-import { Resend } from 'resend';
 import { VercelRequest, VercelResponse } from '@vercel/node';
 
-// Validar que la API key exista
-if (!process.env.RESEND_API_KEY) {
-  console.error('❌ RESEND_API_KEY no está configurada en las variables de entorno');
+// Validar que el Formspree ID exista
+if (!process.env.FORMSPREE_ID) {
+  console.error('❌ FORMSPREE_ID no está configurada en las variables de entorno');
 }
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Función para validar email
 const isValidEmail = (email: string): boolean => {
@@ -39,31 +36,32 @@ export default async (req: VercelRequest, res: VercelResponse) => {
 
     console.log('📧 Intentando enviar email desde:', email);
 
-    const result = await resend.emails.send({
-      from: 'onboarding@resend.dev', // Email de prueba de Resend (cambiar a tu dominio verificado)
-      to: 'barbara.arias.salvo@gmail.com',
-      replyTo: email,
-      subject: `Nuevo mensaje de ${name}: ${subject}`,
-      html: `
-        <h2>Nuevo mensaje de contacto</h2>
-        <p><strong>De:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Asunto:</strong> ${subject}</p>
-        <p><strong>Mensaje:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
-      `,
+    const formspreeId = process.env.FORMSPREE_ID;
+    const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        subject: subject,
+        message: message,
+      }),
     });
 
-    if (result.error) {
-      console.error('❌ Error de Resend:', result.error);
+    const data = await response.json();
+
+    if (!response.ok) {
+      console.error('❌ Error de Formspree:', data);
       return res.status(400).json({ 
         error: 'Error al enviar el correo',
-        details: result.error?.message || 'Error desconocido'
+        details: data.error || 'Error desconocido'
       });
     }
 
-    console.log('✅ Email enviado exitosamente:', result.data?.id);
-    return res.status(200).json({ success: true, data: result.data });
+    console.log('✅ Email enviado exitosamente a través de Formspree');
+    return res.status(200).json({ success: true, data });
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
     console.error('❌ Error en send-email:', errorMessage);
