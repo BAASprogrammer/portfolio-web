@@ -120,37 +120,37 @@ export const ContactForm = ({id} : SectionProps) => {
         <h2 className="mt-10 mb-4 text-2xl font-semibold flex items-center gap-3 justify-center">
           <span className="text-lg text-pink-500 font-bold">05. ¿Quieres contactarme?</span> 
         </h2>
-        <h1 className='text-center text-3xl font-bold'>
+        <h1 className='text-center text-3xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-4'>
           Ponte en contacto
         </h1>
         <form className='mt-5 w-full md:w-3/4 lg:max-w-2xl mx-auto' onSubmit={handleSubmit} noValidate>
-          <span className='text-center'>
+          <span className='text-center block text-gray-300 mb-6'>
             Actualmente estoy buscando nuevas oportunidades. Ya sea que tengas una pregunta o simplemente quieras saludar, haré todo lo posible por responderte.
           </span>
           <div className='grid gap-4 sm:grid-cols-2'>
             <div className='flex flex-col gap-2'>
-              <label htmlFor="name">Nombre</label>
-              <input className='ml-2.5' id='name' name='name' type="text" placeholder='Tu nombre' onChange={handleOnChange}/>
-              {errors.name && <span className='text-red-500 text-sm ml-2.5 font-bold'>{errors.name}</span>}
+              <label htmlFor="name" className='text-blue-300 font-medium'>Nombre</label>
+              <input className='ml-2.5 bg-gray-900/50 border border-blue-500/30 rounded px-3 py-2 text-white placeholder-gray-500 focus:border-blue-400 focus:outline-none transition-colors' id='name' name='name' type="text" placeholder='Tu nombre' onChange={handleOnChange}/>
+              {errors.name && <span className='text-pink-400 text-sm ml-2.5 font-bold'>{errors.name}</span>}
             </div>
             <div className='flex flex-col gap-2'>
-              <label htmlFor="email">Correo</label>
-              <input className='ml-2.5' id='email' name='email' type="email" placeholder='tu@email.com' onChange={handleOnChange}/>
-              {errors.email && <span className='text-red-500 text-sm ml-2.5 font-bold'>{errors.email}</span>}
+              <label htmlFor="email" className='text-blue-300 font-medium'>Correo</label>
+              <input className='ml-2.5 bg-gray-900/50 border border-blue-500/30 rounded px-3 py-2 text-white placeholder-gray-500 focus:border-blue-400 focus:outline-none transition-colors' id='email' name='email' type="email" placeholder='tu@email.com' onChange={handleOnChange}/>
+              {errors.email && <span className='text-pink-400 text-sm ml-2.5 font-bold'>{errors.email}</span>}
             </div>
           </div>
           <div className='flex flex-col gap-2'>
-            <label htmlFor="subject" className='block'>Asunto</label>
-            <input className='ml-2.5' id='subject' name='subject' type="text" placeholder='Asunto del mensaje' onChange={handleOnChange}/>
-            {errors.subject && <span className='text-red-500 text-sm ml-2.5 font-bold'>{errors.subject}</span>}
-            <label htmlFor="message" className='block'>Mensaje</label>
-            <textarea className='block ml-2.5' name='message' id='message' rows={4} placeholder='Tu mensaje...' onChange={handleOnChange}></textarea>
-            {errors.message && <span className='text-red-500 text-sm ml-2.5 font-bold'>{errors.message}</span>}
+            <label htmlFor="subject" className='block text-purple-300 font-medium'>Asunto</label>
+            <input className='ml-2.5 bg-gray-900/50 border border-purple-500/30 rounded px-3 py-2 text-white placeholder-gray-500 focus:border-purple-400 focus:outline-none transition-colors' id='subject' name='subject' type="text" placeholder='Asunto del mensaje' onChange={handleOnChange}/>
+            {errors.subject && <span className='text-pink-400 text-sm ml-2.5 font-bold'>{errors.subject}</span>}
+            <label htmlFor="message" className='block text-purple-300 font-medium'>Mensaje</label>
+            <textarea className='block ml-2.5 bg-gray-900/50 border border-purple-500/30 rounded px-3 py-2 text-white placeholder-gray-500 focus:border-purple-400 focus:outline-none transition-colors' name='message' id='message' rows={4} placeholder='Tu mensaje...' onChange={handleOnChange}></textarea>
+            {errors.message && <span className='text-pink-400 text-sm ml-2.5 font-bold'>{errors.message}</span>}
           </div>
           <div className='flex justify-center'>
-            <button type='submit' className="btn btn-primary btn-glow-hover mt-4 text-center w-1/3 cursor-pointer" title='Enviar Mensaje'>Enviar Mensaje</button> 
+            <button type='submit' className="btn-animated btn btn-primary btn-glow-hover mt-4 text-center w-1/3 cursor-pointer" title='Enviar Mensaje'>Enviar Mensaje</button> 
           </div>
-          {response && <div className="text-green-500 text-sm ml-2.5 text-center mt-4 font-bold">{response}</div>}
+          {response && <div className="text-cyan-400 text-sm ml-2.5 text-center mt-4 font-bold">{response}</div>}
         </form>
     </section>
   )

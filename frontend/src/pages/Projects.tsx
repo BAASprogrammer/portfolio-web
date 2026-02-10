@@ -1,5 +1,6 @@
 import type { SectionProps } from "../types/SectionProps"
 import GuitarStorePreview from "../assets/images/previews/guitar-store-1.png";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
 
 export const Projects = ({id} : SectionProps) => {
     return (
@@ -48,12 +49,24 @@ export const Projects = ({id} : SectionProps) => {
                             <span className="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded">JavaScript</span>
                             <span className="text-xs bg-gray-500/20 text-gray-300 px-2 py-1 rounded">Vercel</span>
                         </div>
-                        <div className="flex gap-4">
-                            <a href="https://guitar-store-react-js.vercel.app/" target="_blank" className="text-blue-400 hover:text-blue-300 transition-colors duration-300 text-sm font-medium">
-                                Ver Demo →
+                        <div className="flex gap-3 flex-wrap">
+                            <a 
+                                href="https://guitar-store-react-js.vercel.app/" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn-animated bg-gradient-to-r from-blue-700 to-cyan-600 hover:from-blue-600 hover:to-cyan-500 text-white border-2 border-blue-400/50 px-4 py-2 rounded-lg font-medium flex items-center justify-center gap-2 cursor-pointer shadow-lg btn-glow-cyan text-sm"
+                            >
+                                <FiExternalLink className="w-4 h-4 btn-icon-animate" />
+                                Ver Demo
                             </a>
-                            <a href="https://github.com/BAASprogrammer/GuitarStore-React-JS" target="_blank" className="text-gray-400 hover:text-gray-300 transition-colors duration-300 text-sm font-medium">
-                                Código →
+                            <a 
+                                href="https://github.com/BAASprogrammer/GuitarStore-React-JS" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn-animated bg-gradient-to-r from-pink-700 to-purple-700 hover:from-pink-600 hover:to-purple-600 text-white border-2 border-pink-400/50 px-4 py-2 rounded-lg font-medium flex items-center justify-center gap-2 cursor-pointer shadow-lg btn-glow-pink text-sm"
+                            >
+                                <FiGithub className="w-4 h-4 btn-icon-rotate" />
+                                Ver Código
                             </a>
                         </div>
                     </div>

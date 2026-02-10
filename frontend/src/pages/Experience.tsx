@@ -20,16 +20,16 @@ export const Experience = ({id} : SectionProps) => {
                     <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-purple-400/50">
                         {/* Header de la experiencia */}
                         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
-                            <div className="mb-4 lg:mb-0 transition-transform duration-300 ease-in-out hover:-translate-y-1">
+                            <div className="mb-4 lg:mb-0">
                                 <h3 className="text-2xl font-bold text-purple-400 mb-2">Desarrollador Full Stack</h3>
                                 <p className="text-base text-gray-300 font-medium">Desis Limitada</p>
                                 <p className="text-sm text-gray-400">2021 - Presente</p>
                             </div>
-                            <div className="flex flex-col gap-2 transition-transform duration-300 ease-in-out hover:-translate-y-1">
-                                <span className="text-sm bg-purple-500/20 text-purple-300 px-4 py-2 rounded-full border border-purple-500/30 w-fit">
+                            <div className="flex flex-col gap-2">
+                                <span className="text-sm bg-purple-500/20 text-purple-300 px-4 py-2 rounded-full border border-purple-500/30 w-fit hover:bg-purple-500/30 transition-transform duration-300 ease-in-out hover:-translate-y-1">
                                     Full Stack Developer
                                 </span>
-                                <span className="text-xs text-gray-500 bg-gray-800/50 px-3 py-1 rounded-full w-fit">
+                                <span className="text-xs text-gray-500 bg-gray-800/50 px-3 py-1 rounded-full w-fit hover:bg-gray-800/70 transition-colors">
                                     3+ años de experiencia
                                 </span>
                             </div>
@@ -88,22 +88,22 @@ export const Experience = ({id} : SectionProps) => {
                         <div className="border-t border-gray-700/50 pt-6">
                             <h4 className="text-lg font-semibold text-gray-200 mb-4">Stack Tecnológico</h4>
                             <div className="flex flex-wrap gap-3">
-                                <span className="text-sm bg-yellow-500/20 text-yellow-300 px-3 py-2 rounded-lg border border-yellow-500/30 hover:bg-yellow-500/30 transition-colors hover:-translate-y-1">
+                                <span className="text-sm bg-yellow-500/20 text-yellow-300 px-3 py-2 rounded-lg border border-yellow-500/30 hover:bg-yellow-500/30 transition-transform duration-300 ease-in-out hover:-translate-y-1">
                                     JavaScript
                                 </span>
-                                <span className="text-sm bg-purple-500/20 text-purple-300 px-3 py-2 rounded-lg border border-purple-500/30 hover:bg-purple-500/30 transition-colors hover:-translate-y-1">
+                                <span className="text-sm bg-indigo-500/20 text-indigo-300 px-3 py-2 rounded-lg border border-indigo-500/30 hover:bg-indigo-500/30 transition-transform duration-300 ease-in-out hover:-translate-y-1">
                                     PHP
                                 </span>
-                            <span className="text-sm bg-green-500/20 text-green-300 px-3 py-2 rounded-lg border border-green-500/30 hover:bg-green-500/30 transition-colors hover:-translate-y-1">
+                            <span className="text-sm bg-blue-500/20 text-blue-300 px-3 py-2 rounded-lg border border-blue-500/30 hover:bg-blue-500/30 transition-transform duration-300 ease-in-out hover:-translate-y-1">
                                     PostgreSQL
                                 </span>
-                                <span className="text-sm bg-blue-500/20 text-blue-300 px-3 py-2 rounded-lg border border-blue-500/30 hover:bg-blue-500/30 transition-colors hover:-translate-y-1">
+                                <span className="text-sm bg-blue-600/20 text-blue-200 px-3 py-2 rounded-lg border border-blue-500/30 hover:bg-blue-500/30 transition-transform duration-300 ease-in-out hover:-translate-y-1">
                                     PL/pgSQL
                                 </span>
-                                <span className="text-sm bg-orange-500/20 text-orange-300 px-3 py-2 rounded-lg border border-orange-500/30 hover:bg-orange-500/30 transition-colors hover:-translate-y-1">
+                                <span className="text-sm bg-orange-500/20 text-orange-300 px-3 py-2 rounded-lg border border-orange-500/30 hover:bg-orange-500/30 transition-transform duration-300 ease-in-out hover:-translate-y-1">
                                     iReport
                                 </span>
-                                <span className="text-sm bg-gray-500/20 text-gray-300 px-3 py-2 rounded-lg border border-gray-500/30 hover:bg-gray-500/30 transition-colors hover:-translate-y-1">
+                                <span className="text-sm bg-pink-500/20 text-pink-300 px-3 py-2 rounded-lg border border-pink-500/30 hover:bg-pink-500/30 transition-transform duration-300 ease-in-out hover:-translate-y-1">
                                     Liderazgo
                                 </span>
                             </div>

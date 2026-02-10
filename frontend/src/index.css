@@ -76,9 +76,61 @@
   }
 
   .btn-glow-hover:hover {
-    box-shadow: 0 0 10px 2px rgba(255, 72, 153, 0.7);
+    box-shadow: 0 0 20px 4px rgba(255, 72, 153, 0.8), 0 0 40px 8px rgba(255, 72, 153, 0.4);
   }
-  /* Introduction */
+
+  /* Button glow effects for different colors */
+  .btn-glow-purple:hover {
+    box-shadow: 0 0 20px 4px rgba(168, 85, 247, 0.8), 0 0 40px 8px rgba(168, 85, 247, 0.4);
+  }
+
+  .btn-glow-cyan:hover {
+    box-shadow: 0 0 20px 4px rgba(34, 211, 238, 0.8), 0 0 40px 8px rgba(34, 211, 238, 0.4);
+  }
+
+  .btn-glow-pink:hover {
+    box-shadow: 0 0 20px 4px rgba(236, 72, 153, 0.8), 0 0 40px 8px rgba(236, 72, 153, 0.4);
+  }
+
+  .btn-glow-blue:hover {
+    box-shadow: 0 0 20px 4px rgba(59, 130, 246, 0.8), 0 0 40px 8px rgba(59, 130, 246, 0.4);
+  }
+
+  .btn-glow-fuchsia:hover {
+    box-shadow: 0 0 20px 4px rgba(217, 70, 239, 0.8), 0 0 40px 8px rgba(217, 70, 239, 0.4);
+  }
+
+  /* Button animations */
+  .btn-animated {
+    @apply transition-all duration-300 ease-out;
+    transform-origin: center;
+  }
+
+  .btn-animated:hover {
+    @apply -translate-y-1 scale-105;
+  }
+
+  .btn-animated:active {
+    @apply scale-95 translate-y-0;
+  }
+
+  /* Icon animation in buttons */
+  .btn-icon-animate {
+    @apply transition-all duration-300 group-hover:translate-x-1;
+  }
+
+  .btn-animated:hover .btn-icon-animate {
+    @apply translate-x-1;
+  }
+
+  /* Rotate icon animation */
+  .btn-icon-rotate {
+    @apply transition-transform duration-300;
+  }
+
+  .btn-animated:hover .btn-icon-rotate {
+    @apply rotate-12;
+  }
   .text-menu{
     @apply font-bold flex justify-start gap-4 p-4 items-center transition-colors duration-500 ease-in;
   }
