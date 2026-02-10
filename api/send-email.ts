@@ -43,8 +43,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     const formData = {
       name: name,
       email: email,
-      subject: subject,
-      message: message,
+      message: `<b>Asunto:</b> ${subject}\n\n<b>Mensaje:</b> ${message}`,
     };
     
     console.log('📝 Enviando datos:', JSON.stringify(formData));
