@@ -7,6 +7,7 @@ export const ContactForm = ({id} : SectionProps) => {
   const getFields = (formElement: HTMLFormElement) => {
     const form = new FormData(formElement)
     return {
+      general : form.get("name") as string,
       name    : form.get("name") as string,
       email   : form.get("email") as string,
       subject : form.get("subject") as string,
@@ -29,6 +30,7 @@ export const ContactForm = ({id} : SectionProps) => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
+            general: fields.name,
             name: fields.name,
             email: fields.email,
             subject: fields.subject,
@@ -73,16 +75,17 @@ export const ContactForm = ({id} : SectionProps) => {
   }
   
   const validateFields = (fields : {
+    general : string,
     name : string,
     email : string,
     subject: string,
     message : string
   }) =>{ 
-    if (!fields.name || fields.name.trim() === "") {
-      setErrors({name : "Por favor ingresa tu nombre"});
+    if(!fields.name && !fields.email && !fields.subject && !fields.message){
+      setErrors({general : "Por favor ingresa todos los campos"});
       return false;
     }
-    if (fields.name.length < 3) {
+    if (fields.name.trim() === "" || fields.name.length < 3) {
       setErrors({name : "El nombre debe tener al menos 3 caracteres"});
       return false;
     }
@@ -94,25 +97,16 @@ export const ContactForm = ({id} : SectionProps) => {
       setErrors({email : "El formato del correo es incorrecto"});
       return false;
     }
-    if (!fields.subject || fields.subject.trim() === "") {
-      setErrors({subject : "Por favor ingresa el asunto"});
-      return false;
-    }
-    if (fields.subject.length < 5) {
+    if (fields.subject.trim() === "" || fields.subject.length < 5) {
       setErrors({subject : "El asunto debe tener al menos 5 caracteres"});
       return false;
     }
-    if (!fields.message || fields.message.trim() === "") {
-      setErrors({message : "Por favor ingresa el mensaje"});
-      return false;
-    }
-    if (fields.message.length < 10) {
+    if (fields.message.trim() === "" || fields.message.length < 10) {
       setErrors({message : "El mensaje debe tener al menos 10 caracteres"});
       return false;
     }
-
     setErrors({});
-    return true
+    return true;
   }
 
   return (
@@ -147,6 +141,7 @@ export const ContactForm = ({id} : SectionProps) => {
             <textarea className='block ml-2.5 bg-gray-900/50 border border-purple-500/30 rounded px-3 py-2 text-white placeholder-gray-500 focus:border-purple-400 focus:outline-none transition-colors' name='message' id='message' rows={4} placeholder='Tu mensaje...' onChange={handleOnChange}></textarea>
             {errors.message && <span className='text-pink-400 text-sm ml-2.5 font-bold'>{errors.message}</span>}
           </div>
+          {errors.general && <div className="text-pink-400 text-sm ml-2.5 text-center mt-4 font-bold">{errors.general}</div>}
           <div className='flex justify-center'>
             <button type='submit' className="btn-animated mt-4 px-4 py-2 text-sm text-center cursor-pointer font-medium text-white bg-gradient-to-r from-pink-600 via-purple-600 to-pink-600 bg-[length:200%_100%] rounded-lg shadow-md hover:shadow-[0_0_15px_3px_rgba(236,72,153,0.5)] transition-all duration-300 animate-gradient-x" title='Enviar Mensaje'>Enviar Mensaje</button> 
           </div>
