@@ -31,7 +31,6 @@ Portfolio-Web/
 │   ├── public/                 # Archivos estáticos
 │   ├── src/
 │   │   ├── assets/
-│   │   │   ├── css/           # Estilos adicionales
 │   │   │   ├── fonts/         # Fuentes personalizadas
 │   │   │   └── images/        # Imágenes y previews
 │   │   ├── components/
@@ -42,7 +41,6 @@ Portfolio-Web/
 │   │   │   └── SocialLinks.tsx
 │   │   ├── context/
 │   │   │   └── ScrollContext.tsx
-│   │   ├── hooks/             # Custom hooks
 │   │   ├── pages/
 │   │   │   ├── About.tsx
 │   │   │   ├── ContactForm.tsx
