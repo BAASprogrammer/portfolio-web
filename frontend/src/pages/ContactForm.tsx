@@ -21,7 +21,8 @@ export const ContactForm = ({id} : SectionProps) => {
     
     if (isValid) {
       try {
-        const response = await fetch('/api/send-email', {
+        console.log('📤 Enviando formulario...');
+        const apiResponse = await fetch('/api/send-email', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -34,22 +35,33 @@ export const ContactForm = ({id} : SectionProps) => {
           }),
         });
 
-        const data = await response.json();
+        console.log('📨 Respuesta recibida:', apiResponse.status);
+        
+        let data;
+        try {
+          data = await apiResponse.json();
+          console.log('📦 Datos parseados:', data);
+        } catch (parseError) {
+          console.error('❌ Error al parsear JSON:', parseError);
+          setResponse('Error al procesar la respuesta del servidor.');
+          return;
+        }
 
-        if (response.ok) {
+        if (apiResponse.ok) {
+          console.log('✅ Email enviado exitosamente');
           setResponse('Correo enviado exitosamente. Pronto me pondré en contacto contigo.');
           event.currentTarget.reset();
           setErrors({});
           setTimeout(() => setResponse(''), 5000);
         } else {
-          // Mostrar error específico si está disponible
           const errorMessage = data.details || data.error || 'Error al enviar el correo. Intenta de nuevo.';
+          console.error('❌ Error del servidor:', data);
           setResponse(`Error: ${errorMessage}`);
-          console.error('Error del servidor:', data);
         }
       } catch (error) {
-        console.error('Error de conexión:', error);
-        setResponse('Error al conectar. Intenta de nuevo.');
+        const errorMsg = error instanceof Error ? error.message : String(error);
+        console.error('❌ Error de conexión:', errorMsg);
+        setResponse(`Error al conectar: ${errorMsg}`);
       }
     }
   }
