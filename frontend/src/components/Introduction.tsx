@@ -25,7 +25,7 @@ export const Introduction = () => {
           <div className="pl-4 pr-4 md:pl-6 md:pr-8 pt-3 md:pt-12 md:h-full text-default flex flex-col">
               <div className='space-y-2 md:space-y-4'>
                 <div>
-                  <h1 className="hidden md:block text-2xl lg:text-2xl font-bold text-gradient-animate mb-1 drop-shadow-lg">Desarrolladora Full Stack</h1>
+                  <h1 className="hidden md:block text-2xl lg:text-2xl font-bold text-gradient-animate mb-1 drop-shadow-lg">Desarrolladora Frontend React | Full Stack</h1>
                   <div className='block md:hidden text-center font-bold text-lg text-gradient-animate drop-shadow-md'>Menú</div>
                   <div className="hidden md:block h-1 w-12 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-full mb-2"></div>
                 </div>
