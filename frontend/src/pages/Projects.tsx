@@ -1,6 +1,7 @@
 import type { SectionProps } from "../types/SectionProps"
 import GuitarStorePreview from "../assets/images/previews/guitar-store-1.png";
 import PortfolioPreview from "../assets/images/previews/portafolio-web.png";
+import AgendaAppPreview from "../assets/images/previews/agendaapp.png";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 
 export const Projects = ({id} : SectionProps) => {
@@ -61,7 +62,68 @@ export const Projects = ({id} : SectionProps) => {
                                 Ver Demo
                             </a>
                             <a 
-                                href="https://github.com/BAASprogrammer/GuitarStore-React-JS" 
+                                href="https://github.com/BAASprogrammer/guitarstore-react-js" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn-animated bg-gradient-to-r from-pink-700 to-purple-700 hover:from-pink-600 hover:to-purple-600 text-white border-2 border-pink-400/50 px-4 py-2 rounded-lg font-medium flex items-center justify-center gap-2 cursor-pointer shadow-lg btn-glow-pink text-sm"
+                            >
+                                <FiGithub className="w-4 h-4 btn-icon-rotate" />
+                                Ver Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div className="flex justify-center">
+                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:border-blue-400/50 max-w-2xl w-full">
+                        {/* Project Image */}
+
+                        <div className="mb-4">
+                            <h3 className="text-xl font-bold text-blue-400 mb-2">AgendaApp</h3>
+                            <p className="text-gray-300 leading-relaxed mb-3">
+                                <strong className="text-gray-200">Citas Médicas</strong> - Plataforma full-stack para la gestión eficiente de citas médicas, con roles de paciente y profesional. Permite agendar, reprogramar y cancelar citas, gestionar agendas y acceder al historial clínico, optimizando la organización y seguimiento de consultas. 
+                                 <br />La base de datos fue gestionada con Supabase y las APIs fueron diseñadas bajo arquitectura REST, implementadas en Spring Boot y validadas con Postman. Incluye autenticación segura con OAuth2 y buenas prácticas como uso de variables de entorno, separación frontend/backend y manejo eficiente del estado con React Query y Zustand.
+                            </p>
+                            <div className="mb-6">
+                                <div className="relative w-full h-110 bg-gradient-to-br from-blue-900/20 to-purple-900/20 border border-blue-500/30 rounded-lg overflow-hidden group">
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <div className="text-center p-4">
+                                            <p className="text-lg text-gray-300">AgendaApp</p>
+                                            <img src={AgendaAppPreview} alt="AgendaApp" />
+                                            <p className="text-xs text-gray-500 mt-1">Next.js + TypeScript</p>
+                                        </div>
+                                    </div>
+                                    {/* Subtle Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                </div>
+                            </div>
+                            <div className="p-2 bg-gradient-to-r from-green-500/20 to-green-700/20 border border-green-500/30 rounded-lg mb-4 text-green-300 text-left">
+                                <p>Sesión paciente: email: demopaciente@agendaapp.cl, contraseña: 123456</p>
+                                <p>Sesión profesional: email: demoprofesional@agendaapp.cl, contraseña: 123456</p>
+                            </div>
+                            <p className="text-sm text-amber-400/80 bg-amber-500/10 border border-amber-500/20 rounded-lg p-3 mb-4">
+                                ⚠️ <strong>Nota importante:</strong> El inicio de sesión puede tomar unos segundos por servidor backend.
+                            </p>
+                        </div>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                            <span className="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded">Next.js</span>
+                            <span className="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded">TypeScript</span>
+                            <span className="text-xs bg-pink-500/20 text-pink-300 px-2 py-1 rounded">Tailwind CSS</span>
+                            <span className="text-xs bg-gray-500/20 text-gray-300 px-2 py-1 rounded">Vercel</span>
+                            <span className="text-xs bg-green-500/20 text-green-300 px-2 py-1 rounded">Render</span>
+                            <span className="text-xs bg-orange-500/20 text-orange-300 px-2 py-1 rounded">Postman</span>
+                        </div>
+                        <div className="flex gap-3 flex-wrap">
+                            <a 
+                                href="https://agenda-app-kappa.vercel.app/" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn-animated bg-gradient-to-r from-blue-700 to-cyan-600 hover:from-blue-600 hover:to-cyan-500 text-white border-2 border-blue-400/50 px-4 py-2 rounded-lg font-medium flex items-center justify-center gap-2 cursor-pointer shadow-lg btn-glow-cyan text-sm"
+                            >
+                                <FiExternalLink className="w-4 h-4 btn-icon-animate" />
+                                Ver Demo
+                            </a>
+                            <a 
+                                href="https://github.com/BAASprogrammer/agenda-app" 
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn-animated bg-gradient-to-r from-pink-700 to-purple-700 hover:from-pink-600 hover:to-purple-600 text-white border-2 border-pink-400/50 px-4 py-2 rounded-lg font-medium flex items-center justify-center gap-2 cursor-pointer shadow-lg btn-glow-pink text-sm"
@@ -96,7 +158,8 @@ export const Projects = ({id} : SectionProps) => {
                         <div className="flex flex-wrap gap-2 mb-4">
                             <span className="text-xs bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded">React</span>
                             <span className="text-xs bg-blue-600/20 text-blue-300 px-2 py-1 rounded">TypeScript</span>
-                            <span className="text-xs bg-pink-500/20 text-pink-300 px-2 py-1 rounded">Vercel</span>
+                            <span className="text-xs bg-pink-500/20 text-pink-300 px-2 py-1 rounded">Tailwind CSS</span>
+                            <span className="text-xs bg-gray-500/20 text-gray-300 px-2 py-1 rounded">Vercel</span>
                         </div>
                         <div className="flex gap-3 flex-wrap">
                             <a 
