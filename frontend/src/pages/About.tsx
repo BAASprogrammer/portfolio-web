@@ -30,7 +30,7 @@ export const About = ({ id }: SectionProps) => {
                             <span className='text-xl md:text-2xl font-bold bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent group-hover:from-purple-300 group-hover:to-pink-300 transition-all'>Backend</span>
                         </div>
                         <p className="text-center text-gray-300 group-hover:text-white transition-colors text-base md:text-lg">
-                            Desarrollo lógica backend con PHP y bases de datos PostgreSQL; conocimientos básicos en Spring Boot.
+                            Desarrollo lógica backend con PHP y bases de datos PostgreSQL; con conocimientos en Spring Boot.
                         </p>
                     </div>
                 </div>

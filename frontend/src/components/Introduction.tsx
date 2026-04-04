@@ -24,7 +24,7 @@ export const Introduction = () => {
 
       {/* Hamburger/Close Button */}
       <button
-        className='md:hidden fixed top-6 right-6 z-50 p-3 rounded-full bg-slate-900/90 border border-white/10 text-white shadow-2xl backdrop-blur-xl active:scale-90 transition-all'
+        className='md:hidden absolute top-6 right-6 z-50 p-3 rounded-full bg-slate-900/90 border border-white/10 text-white shadow-2xl backdrop-blur-xl'
         onClick={() => setMenuOpen(!isMenuOpen)}
         aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
       >
@@ -34,12 +34,13 @@ export const Introduction = () => {
       {/* Menu Side Panel / Content */}
       <aside className={`
           md:block md:sticky md:w-auto md:p-0 md:top-0 md:right-auto md:border-0 md:rounded-none md:h-screen md:bg-slate-950
-          fixed top-0 right-0 h-full z-45 transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1)
+          fixed top-0 right-0 h-dvh z-45 transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1)
           ${isMenuOpen ? "translate-x-0 w-[85%] max-w-[320px]" : "translate-x-full w-0"}
           bg-slate-950/98 backdrop-blur-3xl border-l border-white/5
           md:translate-x-0 md:static md:opacity-100
+          overflow-y-auto
         `}>
-        <div className="px-6 pt-24 pb-8 md:pt-14 md:h-full text-default flex flex-col h-full border-r border-white/5">
+        <div className="px-6 pt-24 pb-8 md:pt-14 text-default flex flex-col min-h-full border-r border-white/5">
           {/* Status & Avatar Section */}
           <div className="mb-10 md:mb-12">
             <div className="flex items-center justify-between mb-8">
