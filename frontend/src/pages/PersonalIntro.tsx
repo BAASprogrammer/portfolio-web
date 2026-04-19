@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { Sparkles, X, Mail, Phone, ArrowRight, FileText } from 'lucide-react';
-
-import AnimatedText from '../components/AnimatedText';
-
 import { personalPhrases } from '../data/personalIntro';
 
 const containerVariants: Variants = {
@@ -58,15 +55,15 @@ export const PersonalIntro = () => {
                     {/* Glowing Backlight - Centered */}
                     <div className="absolute inset-4 bg-pink-500/10 blur-[80px] rounded-full animate-pulse" />
 
-                    {/* Rotating Orbital Dots - Pure Container */}
+                    {/* Rotating Orbital Dots */}
                     <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
                         className="absolute inset-0 rounded-full border-none pointer-events-none will-change-transform bg-transparent"
                     >
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 bg-pink-500 rounded-full shadow-[0_0_15px_rgba(236,72,153,0.8)] border-none"></div>
-                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-purple-500 rounded-full blur-[1px] border-none"></div>
-                        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-indigo-500 rounded-full shadow-[0_0_20px_rgba(99,102,241,0.6)] border-none"></div>
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 bg-pink-500 rounded-full shadow-[0_0_15px_rgba(236,72,153,0.8)]"></div>
+                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-purple-500 rounded-full blur-[1px]"></div>
+                        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-indigo-500 rounded-full shadow-[0_0_20px_rgba(99,102,241,0.6)]"></div>
                     </motion.div>
 
                     {/* Dynamic Specialty Badge */}
@@ -79,7 +76,6 @@ export const PersonalIntro = () => {
                                 className='relative z-20 w-64 rounded-4xl bg-transparent'
                             >
                                 <div className='px-5 py-4 rounded-4xl bg-slate-900/60 backdrop-blur-3xl border border-white/10 shadow-3xl overflow-hidden group hover:border-pink-500/30 transition-colors duration-500'>
-                                    {/* Background Interactive Glow */}
                                     <div className="absolute -top-10 -left-10 w-24 h-24 bg-pink-500/5 blur-3xl rounded-full group-hover:bg-pink-500/10 transition-colors" />
 
                                     <div className="flex flex-col items-center text-center gap-3">
@@ -119,8 +115,21 @@ export const PersonalIntro = () => {
             <motion.div variants={itemVariants} className="space-y-4 sm:space-y-6 max-w-4xl relative z-10 text-center sm:text-left">
                 <div className="flex items-center justify-center sm:justify-start gap-3">
                     <span className="hidden sm:block h-px w-8 bg-pink-500"></span>
-                    <h5 className="text-pink-500 font-mono tracking-widest text-[10px] sm:text-sm uppercase font-black italic">
-                        <AnimatedText text="Code with passion" />
+                    <h5 className="text-pink-500 font-mono tracking-[0.3em] text-[10px] sm:text-sm uppercase font-black italic flex flex-wrap justify-center sm:justify-start">
+                        {"Programar con pasión".split("").map((char, i) => (
+                            <motion.span
+                                key={i}
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{
+                                    duration: 0.4,
+                                    delay: i * 0.04,
+                                    ease: "easeOut"
+                                }}
+                            >
+                                {char === " " ? "\u00A0" : char}
+                            </motion.span>
+                        ))}
                     </h5>
                 </div>
 
@@ -140,7 +149,7 @@ export const PersonalIntro = () => {
                 </p>
             </motion.div>
 
-            {/* Contact Information (Mobile Optimized) */}
+            {/* Contact Information */}
             <motion.div
                 variants={itemVariants}
                 className="mt-8 sm:mt-12 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 px-6 py-3 rounded-full bg-white/5 border border-white/5 backdrop-blur-md w-full sm:w-fit"

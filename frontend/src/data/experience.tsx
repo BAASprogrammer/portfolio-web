@@ -1,4 +1,4 @@
-import { Briefcase, GraduationCap, Code2, Users, Star, Cpu, Layout } from 'lucide-react';
+import { Briefcase, GraduationCap, Users, Star, Cpu, Layout } from 'lucide-react';
 
 export interface ExperienceItem {
     id: string;
