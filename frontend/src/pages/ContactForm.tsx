@@ -79,7 +79,7 @@ export const ContactForm = ({id} : SectionProps) => {
     
     if (isValid) {
       try {
-        console.log('📤 Enviando formulario...');
+
         const apiResponse = await fetch('/api/send-email', {
           method: 'POST',
           headers: {
@@ -94,12 +94,12 @@ export const ContactForm = ({id} : SectionProps) => {
           }),
         });
 
-        console.log('📨 Respuesta recibida:', apiResponse.status);
+
         
         let data;
         try {
           data = await apiResponse.json();
-          console.log('📦 Datos parseados:', data);
+
         } catch (parseError) {
           console.error('❌ Error al parsear JSON:', parseError);
           setResponse('Error al procesar la respuesta del servidor.');
@@ -107,7 +107,7 @@ export const ContactForm = ({id} : SectionProps) => {
         }
 
         if (apiResponse.ok) {
-          console.log('✅ Email enviado exitosamente');
+
           setResponse('Correo enviado exitosamente. Pronto me pondré en contacto contigo.');
           // Reset form states
           setName('');
@@ -166,16 +166,21 @@ export const ContactForm = ({id} : SectionProps) => {
 
   return (
     <section id = {id}>
-        <h2 className="mt-10 mb-4 text-2xl font-semibold flex items-center gap-3 justify-center">
-          <span className="text-lg text-pink-500 font-bold">05. ¿Quieres contactarme?</span> 
-        </h2>
-        <h1 className='text-center text-3xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-4'>
-          Ponte en contacto
-        </h1>
-        <form className='mt-5 w-full md:w-3/4 lg:max-w-2xl mx-auto' onSubmit={handleSubmit} noValidate autoComplete='off'>
-          <span className='text-center block text-gray-300 mb-6'>
+        <div className="text-center mb-10">
+          <h2 className="text-xl font-bold flex items-center justify-center gap-3 text-white mb-2">
+            <span className="h-px w-8 bg-pink-500/50 hidden sm:block"></span>
+            <span className="text-pink-500 font-mono text-lg">05.</span>
+            ¿Quieres contactarme?
+            <span className="h-px w-8 bg-pink-500/50 hidden sm:block"></span>
+          </h2>
+          <h1 className='text-3xl sm:text-4xl font-black bg-linear-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-6'>
+            Ponte en contacto
+          </h1>
+          <p className='text-gray-300 text-lg max-w-2xl mx-auto text-balance leading-relaxed'>
             Actualmente estoy buscando nuevas oportunidades. Ya sea que tengas una pregunta o simplemente quieras saludar, haré todo lo posible por responderte.
-          </span>
+          </p>
+        </div>
+        <form className='mt-5 w-full md:w-3/4 lg:max-w-2xl mx-auto' onSubmit={handleSubmit} noValidate autoComplete='off'>
           <div className='grid gap-4 sm:grid-cols-2'>
             <div className='flex flex-col gap-2'>
               <label htmlFor="name" className='text-blue-300 font-medium'>Nombre</label>

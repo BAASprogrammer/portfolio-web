@@ -11,9 +11,9 @@ export const MainContent = () => {
     <div className="text-default p-6 mx-auto w-full text-left">
       <PersonalIntro />
       <About id="about" />
+      <Skills id='skills' />
       <Experience id='experience' />
       <Projects id='projects' />
-      <Skills id='skills' />
       <ContactForm id='contact' />
       <Footer />
     </div>

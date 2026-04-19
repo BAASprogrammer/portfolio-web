@@ -70,11 +70,12 @@ export const Introduction = () => {
           <nav className="flex-1 space-y-1">
             {[
               { id: 'about', label: 'Sobre mí', icon: <FaUser className="opacity-70 group-hover/item:opacity-100" size={14} /> },
+              { id: 'skills', label: 'Habilidades', icon: <FaTerminal className="opacity-70 group-hover/item:opacity-100" size={14} /> },
               { id: 'experience', label: 'Experiencia', icon: <FaBriefcase className="opacity-70 group-hover/item:opacity-100" size={14} /> },
               { id: 'projects', label: 'Proyectos', icon: <FaCode className="opacity-70 group-hover/item:opacity-100" size={14} /> },
-              { id: 'skills', label: 'Habilidades', icon: <FaTerminal className="opacity-70 group-hover/item:opacity-100" size={14} /> },
               { id: 'contact', label: 'Contacto', icon: <FaEnvelope className="opacity-70 group-hover/item:opacity-100" size={14} /> }
             ].map((item) => (
+
               <button
                 key={item.id}
                 onClick={() => { scrollTo(item.id); setMenuOpen(false); }}

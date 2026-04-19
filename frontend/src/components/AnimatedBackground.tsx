@@ -1,7 +1,7 @@
 export const AnimatedBackground = () => {
   // Array of programming characters
   const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン<>[]{}()#&*+='.split('');
-  
+
   // Generate random columns with characters
   const columns = Array.from({ length: 50 }, (_, i) => ({
     id: i,

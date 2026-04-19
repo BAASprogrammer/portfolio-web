@@ -7,9 +7,8 @@ import './assets/fonts/Inter-Medium.woff2'
 import './assets/fonts/Inter-SemiBold.woff2'
 import './assets/fonts/Inter-Bold.woff2'
 
-// Import global styles
-import './index.css'
 import App from './App.tsx'
+
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

@@ -37,11 +37,26 @@
   body {
     font-family: 'Inter', system-ui, sans-serif;
   }
-  
+
+  /* Only hide cursor on desktop and when document has focus */
+  @media (min-width: 768px) {
+    body:not(:focus-within) {
+      cursor: auto;
+    }
+    body {
+       cursor: none;
+    }
+    a, button, [role="button"], input, textarea {
+      cursor: none !important;
+    }
+  }
+
   .text-default {
     color: oklch(0.7 0.02 340);
   }
 }
+
+
 
 @layer components {
   .btn {
