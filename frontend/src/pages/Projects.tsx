@@ -24,7 +24,8 @@ export const Projects = ({ id }: SectionProps) => {
                     Proyectos <span className="bg-linear-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">Destacados</span>
                 </h2>
                 <p className="mt-4 text-gray-400 text-lg max-w-2xl mx-auto text-balance font-medium">
-                    Diseño y desarrollo soluciones digitales que transforman ideas en resultados.                </p>
+                    Diseño y desarrollo soluciones digitales que transforman ideas en resultados.
+                </p>
             </motion.div>
 
             <div className="flex flex-col gap-12 md:gap-20 relative max-w-7xl mx-auto px-6">
@@ -41,7 +42,7 @@ export const Projects = ({ id }: SectionProps) => {
                             <div className="flex flex-col lg:flex-row overflow-hidden rounded-[3rem] md:rounded-[4rem]">
                                 {/* Info Side */}
                                 <div className="flex-1 p-8 md:p-12 lg:p-16 flex flex-col justify-between order-2 lg:order-1 relative z-10">
-                                    <div>
+                                    <div className="min-w-0"> {/* Ensure container can compress */}
                                         <div className="flex items-center gap-3 mb-6">
                                             {project.warning && (
                                                 <span className="flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[10px] font-black uppercase tracking-widest animate-pulse">
@@ -53,7 +54,7 @@ export const Projects = ({ id }: SectionProps) => {
                                             </span>
                                         </div>
 
-                                        <h3 className="text-4xl md:text-5xl font-black text-white mb-2 group-hover:text-pink-400 transition-colors tracking-tighter">
+                                        <h3 className="text-4xl md:text-5xl font-black text-white mb-2 group-hover:text-pink-400 transition-colors tracking-tighter break-words">
                                             {project.title}
                                         </h3>
                                         <div className="mb-4 text-pink-500 font-black uppercase tracking-[0.2em] text-[10px] italic">
@@ -77,11 +78,15 @@ export const Projects = ({ id }: SectionProps) => {
                                                 </div>
                                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                                     {project.credentials.accounts.map((acc, idx) => (
-                                                        <div key={idx} className="space-y-2 p-3 rounded-2xl bg-white/5 border border-white/5">
+                                                        <div key={idx} className="space-y-2 p-3 rounded-2xl bg-white/5 border border-white/5 overflow-hidden">
                                                             <div className="text-[9px] text-white/30 font-black uppercase tracking-widest">{acc.label}</div>
-                                                            <div className="flex flex-col gap-1">
-                                                                <div className="text-[10px] font-mono"><span className="opacity-40 uppercase text-[8px] mr-1">U:</span> {acc.user}</div>
-                                                                <div className="text-[10px] font-mono"><span className="opacity-40 uppercase text-[8px] mr-1">P:</span> {acc.pass}</div>
+                                                            <div className="flex flex-col gap-1 min-w-0">
+                                                                <div className="text-[10px] font-mono break-all sm:break-words">
+                                                                    <span className="opacity-40 uppercase text-[8px] mr-1">U:</span> {acc.user}
+                                                                </div>
+                                                                <div className="text-[10px] font-mono">
+                                                                    <span className="opacity-40 uppercase text-[8px] mr-1">P:</span> {acc.pass}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     ))}
@@ -101,7 +106,7 @@ export const Projects = ({ id }: SectionProps) => {
                                         </div>
                                     </div>
 
-                                    <div className="flex gap-4 mt-10">
+                                    <div className="flex flex-col sm:flex-row gap-4 mt-10">
                                         {project.demoUrl && (
                                             <motion.a
                                                 whileHover={{ scale: 1.05 }}
@@ -109,7 +114,7 @@ export const Projects = ({ id }: SectionProps) => {
                                                 href={project.demoUrl}
                                                 target="_blank"
                                                 rel="noreferrer"
-                                                className="px-6 py-3.5 rounded-xl bg-white text-slate-950 font-black text-[10px] uppercase tracking-[0.2em] flex items-center gap-2 shadow-[0_10px_20px_rgba(255,255,255,0.1)] transition-all"
+                                                className="px-6 py-3.5 rounded-xl bg-white text-slate-950 font-black text-[10px] uppercase tracking-[0.2em] flex items-center justify-center gap-2 shadow-[0_10px_20px_rgba(255,255,255,0.1)] transition-all w-full sm:w-auto"
                                             >
                                                 Visitar <FiExternalLink size={14} />
                                             </motion.a>
@@ -121,7 +126,7 @@ export const Projects = ({ id }: SectionProps) => {
                                                 href={project.codeUrl}
                                                 target="_blank"
                                                 rel="noreferrer"
-                                                className="px-6 py-3.5 rounded-xl bg-white/5 text-white font-black text-[10px] uppercase tracking-[0.2em] flex items-center gap-2 border border-white/10 transition-all"
+                                                className="px-6 py-3.5 rounded-xl bg-white/5 text-white font-black text-[10px] uppercase tracking-[0.2em] flex items-center justify-center gap-2 border border-white/10 transition-all w-full sm:w-auto"
                                             >
                                                 Código <FiGithub size={14} />
                                             </motion.a>
@@ -130,7 +135,7 @@ export const Projects = ({ id }: SectionProps) => {
                                 </div>
 
                                 {/* Visual Side */}
-                                <div className="flex-1 relative overflow-hidden order-1 lg:order-2 bg-slate-950/30 min-h-[300px] lg:min-h-full">
+                                <div className="flex-1 relative overflow-hidden order-1 lg:order-2 bg-slate-950/30 min-h-[250px] sm:min-h-[300px] lg:min-h-full">
                                     <div className="absolute inset-0 bg-linear-to-br from-pink-500/10 to-purple-500/10 mix-blend-overlay" />
 
                                     <div className="relative h-full flex items-center justify-center p-6 md:p-12 lg:p-16 perspective-1000">

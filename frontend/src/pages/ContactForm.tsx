@@ -59,15 +59,11 @@ export const ContactForm = ({id} : SectionProps) => {
   
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Sanitize fields before submitting
     const sanitizedName = sanitizeInput(name, 'text');
     const sanitizedEmail = sanitizeInput(email, 'email');
     const sanitizedSubject = sanitizeInput(subject, 'subject');
     const sanitizedMessage = sanitizeInput(message, 'message');
-    setName(sanitizedName);
-    setEmail(sanitizedEmail);
-    setSubject(sanitizedSubject);
-    setMessage(sanitizedMessage);
+    
     const fields = {
       general: sanitizedName,
       name: sanitizedName,
@@ -79,14 +75,12 @@ export const ContactForm = ({id} : SectionProps) => {
     
     if (isValid) {
       try {
-
         const apiResponse = await fetch('/api/send-email', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            general: fields.name,
             name: fields.name,
             email: fields.email,
             subject: fields.subject,
@@ -94,43 +88,21 @@ export const ContactForm = ({id} : SectionProps) => {
           }),
         });
 
-
-        
-        let data;
-        try {
-          data = await apiResponse.json();
-
-        } catch (parseError) {
-          console.error('❌ Error al parsear JSON:', parseError);
-          setResponse('Error al procesar la respuesta del servidor.');
-          return;
-        }
-
         if (apiResponse.ok) {
-
           setResponse('Correo enviado exitosamente. Pronto me pondré en contacto contigo.');
-          // Reset form states
-          setName('');
-          setEmail('');
-          setSubject('');
-          setMessage('');
+          setName(''); setEmail(''); setSubject(''); setMessage('');
           setErrors({});
           setTimeout(() => setResponse(''), 5000);
         } else {
-          const errorMessage = data.details || data.error || 'Error al enviar el correo. Intenta de nuevo.';
-          console.error('❌ Error del servidor:', data);
-          setResponse(`Error: ${errorMessage}`);
+          setResponse('Error al enviar el correo. Intenta de nuevo.');
         }
       } catch (error) {
-        const errorMsg = error instanceof Error ? error.message : String(error);
-        console.error('❌ Error de conexión:', errorMsg);
-        setResponse(`Error al conectar: ${errorMsg}`);
+        setResponse('Error al conectar con el servidor.');
       }
     }
   }
 
   const validateFields = (fields : {
-    general : string,
     name : string,
     email : string,
     subject: string,
@@ -144,12 +116,8 @@ export const ContactForm = ({id} : SectionProps) => {
       setErrors({name : "El nombre debe tener al menos 3 caracteres"});
       return false;
     }
-    if (!fields.email || fields.email.trim() === "") {
-      setErrors({email : "Por favor ingresa tu email"});
-      return false;
-    }
-    if (!(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email))) {
-      setErrors({email : "El formato del correo es incorrecto"});
+    if (!fields.email || !(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email))) {
+      setErrors({email : "Formato de correo incorrecto"});
       return false;
     }
     if (fields.subject.trim() === "" || fields.subject.length < 5) {
@@ -165,7 +133,7 @@ export const ContactForm = ({id} : SectionProps) => {
   }
 
   return (
-    <section id = {id}>
+    <section id = {id} className="py-20">
         <div className="text-center mb-10">
           <h2 className="text-xl font-bold flex items-center justify-center gap-3 text-white mb-2">
             <span className="h-px w-8 bg-pink-500/50 hidden sm:block"></span>
@@ -183,27 +151,28 @@ export const ContactForm = ({id} : SectionProps) => {
         <form className='mt-5 w-full md:w-3/4 lg:max-w-2xl mx-auto' onSubmit={handleSubmit} noValidate autoComplete='off'>
           <div className='grid gap-4 sm:grid-cols-2'>
             <div className='flex flex-col gap-2'>
-              <label htmlFor="name" className='text-blue-300 font-medium'>Nombre</label>
+              <label htmlFor="name" className='text-blue-300 font-medium ml-2.5'>Nombre</label>
               <input className='ml-2.5 bg-gray-900/50 border border-blue-500/30 rounded px-3 py-2 text-white placeholder-gray-500 focus:border-blue-400 focus:outline-none transition-colors' id='name' name='name' type="text" placeholder='Tu nombre' value={name} onChange={handleNameChange} onBlur={handleNameBlur} autoComplete="off"/>
               {errors.name && <span className='text-pink-400 text-sm ml-2.5 font-bold'>{errors.name}</span>}
             </div>
             <div className='flex flex-col gap-2'>
-              <label htmlFor="email" className='text-blue-300 font-medium'>Correo</label>
+              <label htmlFor="email" className='text-blue-300 font-medium ml-2.5'>Correo</label>
               <input className='ml-2.5 bg-gray-900/50 border border-blue-500/30 rounded px-3 py-2 text-white placeholder-gray-500 focus:border-blue-400 focus:outline-none transition-colors' id='email' name='email' type="email" placeholder='tu@email.com' value={email} onChange={handleEmailChange} onBlur={handleEmailBlur} autoComplete="off"/>
               {errors.email && <span className='text-pink-400 text-sm ml-2.5 font-bold'>{errors.email}</span>}
             </div>
           </div>
-          <div className='flex flex-col gap-2'>
-            <label htmlFor="subject" className='block text-purple-300 font-medium'>Asunto</label>
+          <div className='flex flex-col gap-2 mt-4'>
+            <label htmlFor="subject" className='text-purple-300 font-medium ml-2.5'>Asunto</label>
             <input className='ml-2.5 bg-gray-900/50 border border-purple-500/30 rounded px-3 py-2 text-white placeholder-gray-500 focus:border-purple-400 focus:outline-none transition-colors' id='subject' name='subject' type="text" placeholder='Asunto del mensaje' value={subject} onChange={handleSubjectChange} onBlur={handleSubjectBlur} autoComplete="off"/>
             {errors.subject && <span className='text-pink-400 text-sm ml-2.5 font-bold'>{errors.subject}</span>}
-            <label htmlFor="message" className='block text-purple-300 font-medium'>Mensaje</label>
-            <textarea className='block ml-2.5 bg-gray-900/50 border border-purple-500/30 rounded px-3 py-2 text-white placeholder-gray-500 focus:border-purple-400 focus:outline-none transition-colors' name='message' id='message' rows={4} placeholder='Tu mensaje...' value={message} onChange={handleMessageChange} onBlur={handleMessageBlur} autoComplete="off"></textarea>
+            
+            <label htmlFor="message" className='text-purple-300 font-medium ml-2.5 mt-2'>Mensaje</label>
+            <textarea className='ml-2.5 bg-gray-900/50 border border-purple-500/30 rounded px-3 py-2 text-white placeholder-gray-500 focus:border-purple-400 focus:outline-none transition-colors resize-none' name='message' id='message' rows={4} placeholder='Tu mensaje...' value={message} onChange={handleMessageChange} onBlur={handleMessageBlur} autoComplete="off"></textarea>
             {errors.message && <span className='text-pink-400 text-sm ml-2.5 font-bold'>{errors.message}</span>}
           </div>
           {errors.general && <div className="text-pink-400 text-sm ml-2.5 text-center mt-4 font-bold">{errors.general}</div>}
           <div className='flex justify-center'>
-            <button type='submit' className="btn-animated mt-4 px-4 py-2 text-sm text-center cursor-pointer font-medium text-white bg-gradient-to-r from-pink-600 via-purple-600 to-pink-600 bg-[length:200%_100%] rounded-lg shadow-md hover:shadow-[0_0_15px_3px_rgba(236,72,153,0.5)] transition-all duration-300 animate-gradient-x" title='Enviar Mensaje'>Enviar Mensaje</button> 
+            <button type='submit' className="btn-animated mt-6 px-6 py-2 text-sm text-center cursor-pointer font-medium text-white bg-gradient-to-r from-pink-600 via-purple-600 to-pink-600 bg-[length:200%_100%] rounded-lg shadow-md hover:shadow-[0_0_15px_3px_rgba(236,72,153,0.5)] transition-all duration-300 animate-gradient-x" title='Enviar Mensaje'>Enviar Mensaje</button> 
           </div>
           {response && <div className="text-cyan-400 text-sm ml-2.5 text-center mt-4 font-bold">{response}</div>}
         </form>
