@@ -41,14 +41,14 @@ export const projectsData: ProjectData[] = [
     {
         id: "guitar-store",
         title: "Tienda de Guitarras Online",
-        description: "E-commerce simulado",
+        description: "E-commerce",
         fullDescription: "Aplicación frontend con catálogo dinámico, carrito de compras interactivo y modo oscuro persistente.",
         tags: ["React", "JavaScript", "Vercel"],
         image: GuitarStorePreview,
         demoUrl: "https://guitar-store-react-js.vercel.app/",
         codeUrl: "https://github.com/BAASprogrammer/guitarstore-react-js",
         color: "blue",
-        warning: "⚠️ Simulación educativa sin sistema de pagos."
+        warning: "⚠️ Integración de flujo de pago con Webpay (entorno de pruebas TBK)."
     },
     {
         id: "portfolio",

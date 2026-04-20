@@ -44,11 +44,7 @@ export const Projects = ({ id }: SectionProps) => {
                                 <div className="flex-1 p-8 md:p-12 lg:p-16 flex flex-col justify-between order-2 lg:order-1 relative z-10">
                                     <div className="min-w-0"> {/* Ensure container can compress */}
                                         <div className="flex items-center gap-3 mb-6">
-                                            {project.warning && (
-                                                <span className="flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[10px] font-black uppercase tracking-widest animate-pulse">
-                                                    <FiAlertCircle className="size-3" /> Simulación
-                                                </span>
-                                            )}
+
                                             <span className="px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-500 text-[10px] font-black uppercase tracking-widest">
                                                 Producción
                                             </span>
