@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FiExternalLink, FiGithub, FiInfo, FiAlertCircle } from "react-icons/fi";
+import { FiExternalLink, FiGithub, FiInfo } from "react-icons/fi";
 import type { SectionProps } from "../types/SectionProps";
 import { projectsData } from "../data/projects";
 
