@@ -128,7 +128,7 @@ export const About = ({ id }: SectionProps) => {
                                     <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V21H14.017ZM5.017 21L5.017 18C5.017 16.8954 5.91243 16 7.017 16H10.017C10.5693 16 11.017 15.5523 11.017 15V9C11.017 8.44772 10.5693 8 10.017 8H6.017C5.46472 8 5.017 8.44772 5.017 9V11C5.017 11.5523 4.56929 12 4.017 12H3.017V21H5.017Z" /></svg>
                                 </div>
 
-                                <p className="text-lg md:text-2xl leading-relaxed text-gray-200 font-medium italic relative z-10">
+                                <p className="text-lg md:text-xl leading-relaxed text-gray-200 font-medium italic relative z-10">
                                     "{aboutContent[activeTab].text}"
                                 </p>
 
