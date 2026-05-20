@@ -20,7 +20,7 @@ export const Projects = ({ id }: SectionProps) => {
                     <span className="text-pink-500 font-mono text-sm font-bold tracking-[0.3em] uppercase">04 • Proyectos</span>
                     <span className="h-px w-8 bg-pink-500/50"></span>
                 </div>
-                <h2 className="text-4xl md:text-7xl font-black text-white tracking-tighter sm:mb-8">
+                <h2 className="text-3xl md:text-6xl font-black text-white tracking-tighter sm:mb-8">
                     Proyectos <span className="bg-linear-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">Destacados</span>
                 </h2>
                 <p className="mt-4 text-gray-400 text-lg max-w-2xl mx-auto text-balance font-medium">
@@ -50,7 +50,7 @@ export const Projects = ({ id }: SectionProps) => {
                                             </span>
                                         </div>
 
-                                        <h3 className="text-4xl md:text-5xl font-black text-white mb-2 group-hover:text-pink-400 transition-colors tracking-tighter break-words">
+                                        <h3 className="text-3xl md:text-4xl font-black text-white mb-2 group-hover:text-pink-400 transition-colors tracking-tighter break-words">
                                             {project.title}
                                         </h3>
                                         <div className="mb-4 text-pink-500 font-black uppercase tracking-[0.2em] text-[10px] italic">

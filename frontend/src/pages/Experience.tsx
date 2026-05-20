@@ -25,7 +25,7 @@ export const Experience = ({ id }: SectionProps) => {
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    className="text-4xl md:text-7xl font-black text-white tracking-tighter"
+                    className="text-3xl md:text-6xl font-black text-white tracking-tighter"
                 >
                     Experiencia <span className="bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Profesional</span>
                 </motion.h2>
@@ -71,7 +71,7 @@ export const Experience = ({ id }: SectionProps) => {
                                 </div>
 
                                 {/* Description */}
-                                <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-10 font-medium opacity-90 border-l-2 border-purple-500/30 pl-6">
+                                <p className="text-gray-300 text-xl md:text-2xl leading-relaxed mb-10 font-medium opacity-90 border-l-2 border-purple-500/30 pl-6">
                                     {item.description}
                                 </p>
 
@@ -84,7 +84,7 @@ export const Experience = ({ id }: SectionProps) => {
                                             </div>
                                             <div>
                                                 <h4 className="text-xs font-black text-white uppercase tracking-tight mb-1">{detail.title}</h4>
-                                                <p className="text-[10px] md:text-xs text-gray-400 leading-relaxed">{detail.content}</p>
+                                                <p className="text-sm md:text-base text-gray-400 leading-relaxed">{detail.content}</p>
                                             </div>
                                         </div>
                                     ))}
