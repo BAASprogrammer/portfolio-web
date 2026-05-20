@@ -1,6 +1,7 @@
 import GuitarStorePreview from "../assets/images/previews/guitar-store-1.png";
 import PortfolioPreview from "../assets/images/previews/portafolio-web.png";
 import AgendaAppPreview from "../assets/images/previews/agendaapp.png";
+import MunicipalidadPreview from "../assets/images/previews/municipalidad-x.png";
 
 export interface ProjectData {
     id: string;
@@ -17,6 +18,7 @@ export interface ProjectData {
         label: string;
         accounts: { user: string; pass: string; label: string }[];
     };
+    adminPanelUrl?: string;
 }
 
 export const projectsData: ProjectData[] = [
@@ -59,5 +61,24 @@ export const projectsData: ProjectData[] = [
         image: PortfolioPreview,
         codeUrl: "https://github.com/BAASprogrammer/Portfolio-Web",
         color: "purple"
+    },
+    {
+        id: "municipalidad-x",
+        title: "Municipalidad-X",
+        description: "Portal de transparencia municipal",
+        fullDescription: "Sitio web institucional y portal de transparencia con panel administrativo integrado. Gestión dinámica de noticias, servicios, departamentos, trámites y autoridades, con control de acceso mediante autenticación segura y protección de rutas.",
+        tags: ["React 19", "TypeScript", "Vite", "Tailwind CSS", "Node.js", "Express", "Supabase", "Vercel", "Render"],
+        image: MunicipalidadPreview,
+        color: "green",
+        demoUrl: "https://municipalidad-x.vercel.app/",
+        codeUrl: "https://github.com/BAASprogrammer/municipalidad-x",
+        warning: "⚠️ Proyecto en desarrollo - Monorepo con arquitectura escalable y validación de tablas integrada.",
+        credentials: {
+            label: "Cuenta de Acceso Admin",
+            accounts: [
+                { label: "Admin", user: "admin@gmail.cl", pass: "123456" }
+            ]
+        },
+        adminPanelUrl: "https://municipalidad-x.vercel.app/admin"
     }
 ];

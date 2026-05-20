@@ -70,7 +70,8 @@ export const Projects = ({ id }: SectionProps) => {
                                         {project.credentials && (
                                             <div className="mb-8 p-6 rounded-[2rem] bg-slate-950/50 border border-white/5 text-[11px] text-gray-400 shadow-inner group-hover:border-pink-500/20 transition-colors">
                                                 <div className="flex items-center gap-2 mb-4 text-pink-400 font-black uppercase tracking-widest">
-                                                    <FiInfo className="size-3" /> acceso demo
+                                                    <FiInfo className="size-3" /> acceso demo <br />
+                                                    {project.adminPanelUrl}
                                                 </div>
                                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                                     {project.credentials.accounts.map((acc, idx) => (

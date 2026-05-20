@@ -18,7 +18,7 @@ export const LofiPlayer = () => {
     const playerRef = useRef<any>(null);
 
     // Stream de Lofi Girl
-    const videoId = "jfKfPfyJRdk";
+    const videoId = "zuCRSwWssVk";
 
     useEffect(() => {
         // Load YouTube API

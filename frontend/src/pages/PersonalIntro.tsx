@@ -116,7 +116,7 @@ export const PersonalIntro = () => {
                 <div className="flex items-center justify-center sm:justify-start gap-3">
                     <span className="hidden sm:block h-px w-8 bg-pink-500"></span>
                     <h5 className="text-pink-500 font-mono tracking-[0.3em] text-[10px] sm:text-sm uppercase font-black italic flex flex-wrap justify-center sm:justify-start">
-                        {"Programar con pasión".split("").map((char, i) => (
+                        {"Programando con pasión".split("").map((char, i) => (
                             <motion.span
                                 key={i}
                                 initial={{ opacity: 0, y: 10 }}
