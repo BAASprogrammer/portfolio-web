@@ -1,10 +1,5 @@
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
-
-interface ScrollContextProps {
-    scrollTo: (id: string) => void;
-    containerRef: React.RefObject<HTMLDivElement | null>;
-    activeSection: string | null;
-}
+import type { ScrollContextProps } from "../types/ScrollContext";
 
 const ScrollContext = createContext<ScrollContextProps | undefined>(undefined);
 
