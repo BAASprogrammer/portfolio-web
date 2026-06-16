@@ -1,4 +1,4 @@
-// Exportar todas las interfaces desde un solo punto
+// Export types from individual files
 export type { SectionProps } from './SectionProps';
 export type { Skill } from './Skill';
 export type { ProjectData } from './Project';
