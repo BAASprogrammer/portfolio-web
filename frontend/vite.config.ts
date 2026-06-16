@@ -12,13 +12,7 @@ export default defineConfig({
   },
   build: {
     target: 'ES2022',
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
+    minify: true,
     rollupOptions: {
       output: {
         manualChunks: {
