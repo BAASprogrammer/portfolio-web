@@ -1,7 +1,8 @@
 import { FaCode, FaServer, FaTools, FaTerminal, FaLaptopCode, FaReact, FaNodeJs, FaPhp, FaHtml5, FaCss3Alt, FaGitAlt, FaGithub, FaDatabase as FaDb } from 'react-icons/fa'
-import { SiNextdotjs, SiTypescript, SiJavascript, SiTailwindcss, SiSpringboot, SiPostgresql, SiMysql, SiVercel, SiRender, SiSupabase, SiPostman, SiVite, SiEclipseide } from 'react-icons/si'
+import { SiNextdotjs, SiTypescript, SiJavascript, SiTailwindcss, SiSpringboot, SiPostgresql, SiMysql, SiVercel, SiRender, SiSupabase, SiPostman, SiVite, SiEclipseide, SiDotnet, SiDocker } from 'react-icons/si'
 import { VscVscode } from 'react-icons/vsc'
 import { SquareCode } from 'lucide-react'
+import type { Skill } from '../types/Skill'
 
 export const categories = [
     { id: 'frontend', title: 'Frontend', icon: <FaCode />, color: 'from-blue-500 to-cyan-400' },
@@ -11,12 +12,6 @@ export const categories = [
     { id: 'editors', title: 'Editores', icon: <FaTerminal />, color: 'from-indigo-500 to-violet-400' },
     { id: 'others', title: 'Otros', icon: <FaLaptopCode />, color: 'from-gray-500 to-slate-400' }
 ];
-
-export interface Skill {
-    name: string;
-    color: string;
-    icon: React.ReactNode;
-}
 
 export const skillData: Record<string, Skill[]> = {
     frontend: [
@@ -32,15 +27,18 @@ export const skillData: Record<string, Skill[]> = {
         { name: 'Node.js', color: 'text-green-500 border-green-500/20 bg-green-500/5', icon: <FaNodeJs /> },
         { name: 'PHP', color: 'text-indigo-400 border-indigo-500/20 bg-indigo-500/5', icon: <FaPhp /> },
         { name: 'Spring Boot', color: 'text-emerald-500 border-emerald-500/20 bg-emerald-500/5', icon: <SiSpringboot /> },
+        { name: '.NET', color: 'text-purple-600 border-purple-500/20 bg-purple-500/5', icon: <SiDotnet /> },
         { name: 'APIs REST', color: 'text-orange-400 border-orange-500/20 bg-orange-500/5', icon: <FaServer /> }
     ],
     databases: [
         { name: 'PostgreSQL', color: 'text-blue-300 border-blue-500/20 bg-blue-500/5', icon: <SiPostgresql /> },
-        { name: 'MySQL', color: 'text-orange-300 border-orange-500/20 bg-orange-500/5', icon: <SiMysql /> }
+        { name: 'MySQL', color: 'text-orange-300 border-orange-500/20 bg-orange-500/5', icon: <SiMysql /> },
+        { name: 'SQL Server', color: 'text-blue-600 border-blue-500/20 bg-blue-500/5', icon: <FaDb /> }
     ],
     tools: [
         { name: 'Git', color: 'text-red-500 border-red-500/20 bg-red-500/5', icon: <FaGitAlt /> },
         { name: 'GitHub', color: 'text-white border-white/20 bg-white/5', icon: <FaGithub /> },
+        { name: 'Docker', color: 'text-blue-400 border-blue-500/20 bg-blue-500/5', icon: <SiDocker /> },
         { name: 'Vercel', color: 'text-white border-white/20 bg-white/5', icon: <SiVercel /> },
         { name: 'Render', color: 'text-indigo-400 border-indigo-500/20 bg-indigo-500/5', icon: <SiRender /> },
         { name: 'Supabase', color: 'text-emerald-400 border-emerald-500/20 bg-emerald-500/5', icon: <SiSupabase /> },

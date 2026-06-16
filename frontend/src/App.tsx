@@ -1,10 +1,11 @@
-import { Introduction } from './components/Introduction'
-import { MainContent } from './components/MainContent'
-import { AnimatedBackground } from './components/AnimatedBackground'
-import { ScrollProvider, useScroll } from './context/ScrollContext'
-import { LofiPlayer } from './components/LofiPlayer'
+import { Introduction } from '@/components/Introduction'
+import { MainContent } from '@/components/MainContent'
+import { AnimatedBackground } from '@/components/AnimatedBackground'
+import { ScrollProvider, useScroll } from '@/context/ScrollContext'
+import { lazy, Suspense } from 'react'
+import { CustomCursor } from '@/components/CustomCursor'
 
-import { CustomCursor } from './components/CustomCursor'
+const LofiPlayer = lazy(() => import('@/components/LofiPlayer').then(m => ({ default: m.LofiPlayer })))
 
 function App() {
 
@@ -29,7 +30,9 @@ const AppContainer = () => {
           <MainContent />
         </div>
       </div>
-      <LofiPlayer />
+      <Suspense fallback={null}>
+        <LofiPlayer />
+      </Suspense>
     </div>
   );
 };

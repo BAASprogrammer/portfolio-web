@@ -1,25 +1,8 @@
+import type { ProjectData } from '../types/Project';
 import GuitarStorePreview from "../assets/images/previews/guitar-store-1.png";
 import PortfolioPreview from "../assets/images/previews/portafolio-web.png";
 import AgendaAppPreview from "../assets/images/previews/agendaapp.png";
 import MunicipalidadPreview from "../assets/images/previews/municipalidad-x.png";
-
-export interface ProjectData {
-    id: string;
-    title: string;
-    description: string;
-    fullDescription: string;
-    tags: string[];
-    image: string;
-    demoUrl?: string;
-    codeUrl?: string;
-    color: string;
-    warning?: string;
-    credentials?: {
-        label: string;
-        accounts: { user: string; pass: string; label: string }[];
-    };
-    adminPanelUrl?: string;
-}
 
 export const projectsData: ProjectData[] = [
     {

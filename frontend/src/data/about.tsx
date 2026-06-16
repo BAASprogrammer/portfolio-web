@@ -17,6 +17,6 @@ export const aboutContent = {
         title: "Backend",
         icon: <FaServer />,
         color: "from-purple-400 to-pink-500",
-        text: "Desarrollo lógica backend robusta con Node.js (Express), Java (Spring Boot) y PHP, integrando bases de datos como PostgreSQL. Diseño APIs REST seguras, manejo autenticación (JWT, OAuth) y estructuro arquitecturas escalables y mantenibles. Trabajo también con Supabase y servicios gestionados para acelerar despliegues y facilitar el testing."
+        text: "Desarrollo lógica backend robusta con Node.js (Express), Java (Spring Boot), .NET y PHP, integrando bases de datos como PostgreSQL y SQL Server. Diseño APIs REST seguras, manejo autenticación (JWT, OAuth) y estructuro arquitecturas escalables y mantenibles. Trabajo también con Supabase y servicios gestionados para acelerar despliegues y facilitar el testing."
     }
 };
