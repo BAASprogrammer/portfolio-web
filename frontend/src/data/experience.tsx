@@ -11,7 +11,7 @@ export const experienceData: ExperienceItem[] = [
         icon: <Briefcase size={22} />,
         color: "from-purple-500 to-indigo-500",
         description: "Liderazgo técnico y desarrollo integral de sistemas empresariales de alto impacto.",
-        badge: "4 Años",
+        badge: "4+ Años",
         details: [
             {
                 title: "Backend & Performance",
