@@ -11,7 +11,7 @@ export const experienceData: ExperienceItem[] = [
         icon: <Briefcase size={22} />,
         color: "from-purple-500 to-indigo-500",
         description: "Liderazgo técnico y desarrollo integral de sistemas empresariales de alto impacto.",
-        badge: "3+ Años",
+        badge: "4 Años",
         details: [
             {
                 title: "Backend & Performance",
@@ -29,7 +29,7 @@ export const experienceData: ExperienceItem[] = [
             },
             {
                 title: "Liderazgo & Requerimientos",
-                content: "Dirigí al equipo técnico durante 6 meses en la planificación de entregables y análisis de requerimientos críticos junto a equipos funcionales para asegurar soluciones alineadas al negocio.",
+                content: "Dirigí al equipo de desarrollo durante 6 meses en la planificación de entregables y análisis de requerimientos críticos junto a equipos funcionales para asegurar soluciones alineadas al negocio.",
                 highlight: "Gestión Técnica",
                 icon: <Users size={18} />,
                 color: "indigo"
