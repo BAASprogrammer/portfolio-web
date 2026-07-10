@@ -9,7 +9,7 @@ export const About = ({ id }: SectionProps) => {
     const [activeTab, setActiveTab] = useState<Category>('vision');
 
     const stats = [
-        { label: 'Experiencia', value: '3+ Años', icon: <FiZap className="text-amber-400" /> },
+        { label: 'Experiencia', value: '4 Años', icon: <FiZap className="text-amber-400" /> },
         { label: 'Enfoque', value: 'Full Stack', icon: <FiTarget className="text-pink-400" /> },
     ];
 
