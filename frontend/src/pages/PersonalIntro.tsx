@@ -141,7 +141,7 @@ export const PersonalIntro = () => {
                 </h1>
 
                 <h2 className="text-lg sm:text-3xl md:text-4xl text-gray-300/90 font-bold tracking-tight max-w-2xl px-2 sm:px-0">
-                    Desarrolladora Frontend React <span className="inline text-white/20 px-2">|</span> <span>Full Stack</span>
+                    Developer Frontend <span className="inline text-white/20 px-2">|</span> <span>Full Stack</span>
                 </h2>
 
                 <p className='text-gray-400 text-base sm:text-xl leading-relaxed max-w-2xl font-medium px-4 sm:px-0'>
