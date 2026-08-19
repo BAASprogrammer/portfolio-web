@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { SectionProps } from "../types/SectionProps";
 import { aboutContent } from '../data/about';
-import { FiTarget, FiZap, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
-import { SocialLinks } from '@/components/SocialLinks';
+import { FiTarget, FiZap } from 'react-icons/fi';
 
 export const About = ({ id }: SectionProps) => {
     type Category = 'vision' | 'frontend' | 'backend';
