@@ -8,7 +8,7 @@ export const SocialLinks = () => {
             <a className={linkStyles} href="https://github.com/BAASprogrammer" title='GitHub' target='_blank' rel='noopener noreferrer'>
                 <FaGithub />
             </a>
-            <a className={linkStyles} href="https://linkedin.com/in/barbara-arias-salvo" title='LinkedIn' target='_blank' rel='noopener noreferrer'>
+            <a className={linkStyles} href="https://linkedin.com/in/barbara-arias-s" title='LinkedIn' target='_blank' rel='noopener noreferrer'>
                 <FaLinkedin />
             </a>
             <a className={linkStyles} href="mailto:bariassalvo@gmail.com" title='Email' target='_blank' rel='noopener noreferrer'>

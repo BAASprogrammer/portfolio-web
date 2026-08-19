@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import type { SectionProps } from "../types/SectionProps";
 import { aboutContent } from '../data/about';
 import { FiTarget, FiZap, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import { SocialLinks } from '@/components/SocialLinks';
 
 export const About = ({ id }: SectionProps) => {
     type Category = 'vision' | 'frontend' | 'backend';
@@ -61,19 +62,6 @@ export const About = ({ id }: SectionProps) => {
                                 <p className="text-xl md:text-3xl font-black text-white leading-tight mb-8 text-center md:text-left tracking-tight">
                                     Desarrollo <span className="text-pink-500">soluciones integrales</span> donde la solidez técnica se une a la <span className="italic text-gray-400">excelencia visual</span>.
                                 </p>
-
-                                {/* Social Links / Quick Contact */}
-                                <div className="flex gap-4 mb-12 justify-center md:justify-start">
-                                    {[
-                                        { icon: <FiGithub size={18} />, href: "#" },
-                                        { icon: <FiLinkedin size={18} />, href: "#" },
-                                        { icon: <FiMail size={18} />, href: "#" }
-                                    ].map((social, i) => (
-                                        <a key={i} href={social.href} className="p-3 rounded-2xl bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-pink-500/20 hover:border-pink-500/30 transition-all">
-                                            {social.icon}
-                                        </a>
-                                    ))}
-                                </div>
 
                                 <div className="grid grid-cols-2 gap-4 mt-auto">
                                     {stats.map((stat, i) => (
