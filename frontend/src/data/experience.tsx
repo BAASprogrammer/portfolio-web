@@ -6,7 +6,7 @@ export const experienceData: ExperienceItem[] = [
         id: "desis",
         role: "Desarrolladora Full Stack",
         company: "Desis Limitada",
-        period: "2021 - Actualidad",
+        period: "2021 - 2026",
         type: 'work',
         icon: <Briefcase size={22} />,
         color: "from-purple-500 to-indigo-500",
